@@ -64,6 +64,46 @@
             transform: scale(1.05);
         }
         
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .slide {
+            text-align: center;
+            animation: fadeIn 0.8s ease;
+        }
+        
+        .slide img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .slide img:hover {
+            transform: scale(1.1) rotate(2deg);
+        }
+        
+        .slide p {
+            color: #fff;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-top: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
         .corazon {
             position: fixed;
             font-size: 2em;
@@ -114,8 +154,33 @@
     
     <div id="mensaje-oculto">
         <h1>¡Te amo mi amor! ❤️</h1>
-        <img src="https://media.tenor.com/v/love-you-so-much-adorable-cute-love-you-gif-21722413-200w.gif?width=400&height=400" alt="Te amo GIF">
-        <img src="https://media.tenor.com/v/hearts-love-emoji-emojis-kawaii-gif-17463031-200w.gif?width=400&height=400" alt="Corazón">
+        
+        <div class="galeria">
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1546445317-29f4545bc62d?w=500" alt="Jardín de girasoles">
+                <p>Nuestro jardín 🌻</p>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=500" alt="GT-R">
+                <p>Nuestro coche 🚗💨</p>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500" alt="Casa bonita">
+                <p>Nuestra vida juntos 🏡</p>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500" alt="Playa">
+                <p>Nuestras vacaciones 🌊</p>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1551024601-564d6d6744f0?w=500" alt="Café">
+                <p>Nuestro café ☕</p>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1518119770-b7e95d132243?w=500" alt="Pizza">
+                <p>Nuestras pizzas 🍕</p>
+            </div>
+        </div>
     </div>
 
     <script>
