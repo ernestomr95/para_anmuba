@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        #mensaje-oculto {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        #mensaje-oculto.mostrar {
+            display: block;
+            animation: fadeIn 1s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        #mensaje-oculto h1 {
+            color: #fff;
+            font-size: 3em;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+        
+        #mensaje-oculto img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin: 15px 0;
+            transition: transform 0.3s ease;
+        }
+        
+        #mensaje-oculto img:hover {
+            transform: scale(1.05);
+        }
+        
+        .corazon {
+            position: fixed;
+            font-size: 2em;
+            animation: flotar 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="contenido-principal" style="text-align: center;">
+        <h1 style="color: #fff; font-size: 3em; text-shadow: 3px 3px 6px rgba(0,0,0,0.3); margin-bottom: 40px;">
+            ¿Tienes algo que decirme? ❤️
+        </h1>
+        <button onclick="mostrarSorpresa()" style="
+            padding: 20px 50px;
+            font-size: 1.5em;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a5a);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(238, 90, 90, 0.4);
+            transition: all 0.3s ease;
+        " onmouseover="this.style.transform='scale(1.1)" onmouseout="this.style.transform='scale(1)'">
+            ¡SORPRESA! 💕
+        </button>
+    </div>
+    
+    <div id="mensaje-oculto">
+        <h1>¡Te amo mi amor! ❤️</h1>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnVqdXU2dGVqcTM2b2VqdXU2dGVqcTM2b2VqdXU2dGVqcTM2b2VqdXU2Znxlc3NvcmNlJTNk/giphy.gif" alt="Te amo GIF">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnVqdXU2dGVqcTM2b2VqdXU2dGVqcTM2b2VqdXU2dGVqcTM2b2VqdXU2Znxlc3NvcmNlJTNk/giphy.gif" alt="Corazón">
+    </div>
+
+    <script>
+        function mostrarSorpresa() {
+            document.getElementById('contenido-principal').style.display = 'none';
+            document.getElementById('mensaje-oculto').classList.add('mostrar');
+            
+            for (let i = 0; i < 20; i++) {
+                let corazon = document.createElement('div');
+                corazon.className = 'corazon';
+                corazon.innerHTML = '❤️';
+                corazon.style.left = Math.random() * 100 + 'vw';
+                corazon.style.top = Math.random() * 100 + 'vh';
+                corazon.style.animationDelay = Math.random() * 2 + 's';
+                corazon.style.fontSize = (Math.random() * 2 + 1) + 'em';
+                document.body.appendChild(corazon);
+            }
+        }
+    </script>
+</body>
+</html>
