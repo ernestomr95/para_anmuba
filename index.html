@@ -172,14 +172,6 @@
                 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500" alt="Playa">
                 <p>Nuestras vacaciones 🌊</p>
             </div>
-            <div class="slide">
-                <img src="https://images.unsplash.com/photo-1551024601-564d6d6744f0?w=500" alt="Café">
-                <p>Nuestro café ☕</p>
-            </div>
-            <div class="slide">
-                <img src="https://images.unsplash.com/photo-1518119770-b7e95d132243?w=500" alt="Pizza">
-                <p>Nuestras pizzas 🍕</p>
-            </div>
         </div>
     </div>
 
@@ -207,30 +199,44 @@
             }
         }
 
+        const frasesNo = [
+            "seguro que te has equivocado, vuelve a probar 💔",
+            "momento de reflexión... ¿estás segura? 🤔",
+            "piénsalo mejor, anda 🙏",
+            "no puedes decir que no a esto 💕",
+            "la respuesta correcta es SÍ 😏",
+            "te doy otra oportunidad 😘"
+        ];
+
         function opcionNo() {
             contadorNo++;
             
+            let contenedor = document.createElement('div');
+            contenedor.style.position = 'fixed';
+            contenedor.style.left = Math.random() * 70 + 'vw';
+            contenedor.style.top = Math.random() * 70 + 'vh';
+            contenedor.style.display = 'flex';
+            contenedor.style.alignItems = 'center';
+            contenedor.style.gap = '15px';
+            contenedor.style.zIndex = '10';
+            contenedor.style.transform = 'rotate(' + (Math.random() * 10 - 5) + 'deg)';
+            
             let pato = document.createElement('img');
             pato.src = patosConCuchillos[Math.floor(Math.random() * patosConCuchillos.length)];
-            pato.style.position = 'fixed';
-            pato.style.left = Math.random() * 80 + 'vw';
-            pato.style.top = Math.random() * 80 + 'vh';
             pato.style.width = '150px';
-            pato.style.zIndex = '1';
-            pato.style.transform = 'rotate(' + (Math.random() * 30 - 15) + 'deg)';
-            document.body.appendChild(pato);
+            pato.style.borderRadius = '15px';
+            contenedor.appendChild(pato);
             
             let mensaje = document.createElement('div');
-            mensaje.innerHTML = 'supongo que te has equivocado, vuelve a probar 💔';
-            mensaje.style.position = 'fixed';
-            mensaje.style.left = Math.random() * 60 + 'vw';
-            mensaje.style.top = Math.random() * 60 + 'vh';
+            mensaje.innerHTML = frasesNo[Math.floor(Math.random() * frasesNo.length)];
             mensaje.style.color = '#fff';
-            mensaje.style.fontSize = '1.5em';
+            mensaje.style.fontSize = '1.3em';
             mensaje.style.fontWeight = 'bold';
             mensaje.style.textShadow = '2px 2px 4px rgba(0,0,0,0.5)';
-            mensaje.style.zIndex = '2';
-            document.body.appendChild(mensaje);
+            mensaje.style.maxWidth = '200px';
+            contenedor.appendChild(mensaje);
+            
+            document.body.appendChild(contenedor);
         }
     </script>
 </body>
