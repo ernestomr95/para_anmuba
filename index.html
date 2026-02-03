@@ -103,6 +103,10 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
+
+        #contrato {
+            z-index: 50;
+        }
         
         .corazon {
             position: fixed;
@@ -166,7 +170,19 @@
     </div>
     
     <div id="mensaje-oculto">
-        <h1>¡Te amo mi amor! ❤️</h1>
+        <button onclick="mostrarContrato()" style="
+            padding: 30px 50px;
+            font-size: 1.8em;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a5a);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(238, 90, 90, 0.4);
+            transition: all 0.3s ease;
+        " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            Click aquí para obtener el vale por 1 besote 💋
+        </button>
         
         <div class="galeria">
             <div class="slide">
@@ -184,6 +200,37 @@
             <div class="slide">
                 <img src="https://images.unsplash.com/photo-1535139262971-c51845709a48?w=500" alt="Templo asiático">
                 <p>Nuestras vacaciones 🏯</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contrato" style="display: none; text-align: center; padding: 30px; max-width: 800px; margin: 0 auto;">
+        <div style="background: rgba(255,255,255,0.95); padding: 40px; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+            <h1 style="color: #ff6b6b; font-size: 2em; margin-bottom: 30px;">📜 CONTRATO OFICIAL 📜</h1>
+            
+            <p style="color: #333; font-size: 1.2em; line-height: 1.8; margin-bottom: 20px;">
+                Al haber clicado aquí, has aceptado las siguientes condiciones:
+            </p>
+            
+            <ul style="color: #555; font-size: 1.1em; text-align: left; max-width: 600px; margin: 30px auto; line-height: 2;">
+                <li>✅ Se te concederán <strong>1000 besotes diarios</strong></li>
+                <li>✅ <strong>NO se aceptan devoluciones</strong></li>
+                <li>✅ Debes aguantar a tu Ernesto por el <strong>resto de tu vida</strong></li>
+                <li>✅ Ernesto promete:</li>
+            </ul>
+            
+            <div style="background: #fff0f0; padding: 25px; border-radius: 20px; margin: 30px 0;">
+                <p style="color: #d63384; font-size: 1.2em; font-style: italic;">
+                    "Cuidarte y hacerte feliz, ser tu apoyo en los peores momentos<br>y tu <strong>mejor razón</strong> en los mejores."
+                </p>
+            </div>
+            
+            <p style="color: #ff6b6b; font-size: 2em; font-weight: bold; margin-top: 30px;">
+                Te quiero, boba ❤️
+            </p>
+            
+            <div style="margin-top: 30px;">
+                <span style="font-size: 4em;">💋💋💋</span>
             </div>
         </div>
     </div>
@@ -220,6 +267,23 @@
                 girasol.style.animationDelay = Math.random() * 3 + 's';
                 girasol.style.fontSize = (Math.random() * 1.5 + 1.5) + 'em';
                 document.body.appendChild(girasol);
+            }
+        }
+
+        function mostrarContrato() {
+            document.querySelector('#mensaje-oculto button').style.display = 'none';
+            document.getElementById('contrato').style.display = 'block';
+            document.getElementById('contrato').style.animation = 'fadeIn 1s ease';
+            
+            for (let i = 0; i < 30; i++) {
+                let corazon = document.createElement('div');
+                corazon.className = 'corazon';
+                corazon.innerHTML = '💋';
+                corazon.style.left = Math.random() * 100 + 'vw';
+                corazon.style.top = Math.random() * 100 + 'vh';
+                corazon.style.animationDelay = Math.random() * 2 + 's';
+                corazon.style.fontSize = (Math.random() * 2 + 1) + 'em';
+                document.body.appendChild(corazon);
             }
         }
 
