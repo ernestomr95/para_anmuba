@@ -142,6 +142,89 @@
             50% { transform: translateY(-30px) rotate(-10deg) scale(1.1); }
             75% { transform: translateY(-60px) rotate(20deg) scale(1.15); }
         }
+
+        @media (max-width: 768px) {
+            #contenido-principal h1 {
+                font-size: 1.8em !important;
+                padding: 0 10px;
+            }
+            
+            button {
+                padding: 15px 30px !important;
+                font-size: 1.2em !important;
+            }
+            
+            #mensaje-oculto h1 {
+                font-size: 2em !important;
+            }
+            
+            .galeria {
+                gap: 20px;
+            }
+            
+            .slide img {
+                width: 280px;
+                height: 180px;
+            }
+            
+            .slide p {
+                font-size: 1.3em !important;
+            }
+            
+            .corazon {
+                font-size: 2em;
+            }
+            
+            .girasol {
+                font-size: 2.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #contenido-principal h1 {
+                font-size: 1.5em !important;
+            }
+            
+            button {
+                padding: 12px 25px !important;
+                font-size: 1em !important;
+                border-radius: 40px !important;
+            }
+            
+            #mensaje-oculto h1 {
+                font-size: 1.6em !important;
+            }
+            
+            .galeria {
+                gap: 15px;
+            }
+            
+            .slide img {
+                width: 90vw;
+                height: 150px;
+            }
+            
+            .slide p {
+                font-size: 1.1em !important;
+            }
+            
+            #contrato {
+                padding: 15px;
+            }
+            
+            #contrato h1 {
+                font-size: 1.5em !important;
+            }
+            
+            #contrato p, #contrato li {
+                font-size: 1em !important;
+            }
+            
+            #contrato button {
+                padding: 20px 30px !important;
+                font-size: 1.2em !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -303,8 +386,8 @@
             let contenedor = document.createElement('div');
             contenedor.className = 'pato-contenedor';
             contenedor.style.position = 'fixed';
-            contenedor.style.left = Math.random() * 60 + 'vw';
-            contenedor.style.top = Math.random() * 60 + 'vh';
+            contenedor.style.left = Math.random() * 50 + 'vw';
+            contenedor.style.top = Math.random() * 50 + 'vh';
             contenedor.style.display = 'flex';
             contenedor.style.alignItems = 'center';
             contenedor.style.gap = '15px';
@@ -313,14 +396,14 @@
             
             let pato = document.createElement('img');
             pato.src = patosConCuchillos[Math.floor(Math.random() * patosConCuchillos.length)];
-            pato.style.width = '150px';
+            pato.style.width = '120px';
             pato.style.borderRadius = '15px';
             contenedor.appendChild(pato);
             
             let mensaje = document.createElement('div');
             mensaje.innerHTML = frasesNo[Math.floor(Math.random() * frasesNo.length)];
             mensaje.style.color = '#fff';
-            mensaje.style.fontSize = '1.3em';
+            mensaje.style.fontSize = '1em';
             mensaje.style.fontWeight = 'bold';
             mensaje.style.textShadow = '2px 2px 4px rgba(0,0,0,0.5)';
             mensaje.style.maxWidth = '200px';
