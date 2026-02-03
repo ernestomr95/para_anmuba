@@ -110,9 +110,17 @@
         
         .corazon {
             position: fixed;
-            font-size: 2em;
-            animation: flotar 4s ease-in-out infinite;
+            font-size: 3em;
+            animation: flotar 3s ease-in-out infinite;
             pointer-events: none;
+            z-index: 0;
+        }
+        
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0) rotate(-15deg) scale(1); }
+            25% { transform: translateY(-40px) rotate(10deg) scale(1.2); }
+            50% { transform: translateY(-20px) rotate(-5deg) scale(1); }
+            75% { transform: translateY(-50px) rotate(15deg) scale(1.1); }
         }
         
         @keyframes flotar {
@@ -122,15 +130,17 @@
         
         .girasol {
             position: fixed;
-            font-size: 2.5em;
-            animation: flotarGirasol 5s ease-in-out infinite;
+            font-size: 3.5em;
+            animation: flotarGirasol 4s ease-in-out infinite;
             pointer-events: none;
             z-index: 0;
         }
         
         @keyframes flotarGirasol {
-            0%, 100% { transform: translateY(0) rotate(-10deg); }
-            50% { transform: translateY(-30px) rotate(10deg); }
+            0%, 100% { transform: translateY(0) rotate(-20deg) scale(1); }
+            25% { transform: translateY(-50px) rotate(15deg) scale(1.2); }
+            50% { transform: translateY(-30px) rotate(-10deg) scale(1.1); }
+            75% { transform: translateY(-60px) rotate(20deg) scale(1.15); }
         }
     </style>
 </head>
@@ -221,7 +231,7 @@
             
             <div style="background: #fff0f0; padding: 25px; border-radius: 20px; margin: 30px 0;">
                 <p style="color: #d63384; font-size: 1.2em; font-style: italic;">
-                    "Cuidarte y hacerte feliz, ser tu apoyo en los peores momentos<br>y tu <strong>mejor razón</strong> en los mejores."
+                    "Cuidarte y hacerte feliz, ser tu apoyo en los malos momentos<br>y <strong>disfrutar contigo</strong> de los buenos."
                 </p>
             </div>
             
@@ -274,17 +284,6 @@
             document.querySelector('#mensaje-oculto button').style.display = 'none';
             document.getElementById('contrato').style.display = 'block';
             document.getElementById('contrato').style.animation = 'fadeIn 1s ease';
-            
-            for (let i = 0; i < 30; i++) {
-                let corazon = document.createElement('div');
-                corazon.className = 'corazon';
-                corazon.innerHTML = '💋';
-                corazon.style.left = Math.random() * 100 + 'vw';
-                corazon.style.top = Math.random() * 100 + 'vh';
-                corazon.style.animationDelay = Math.random() * 2 + 's';
-                corazon.style.fontSize = (Math.random() * 2 + 1) + 'em';
-                document.body.appendChild(corazon);
-            }
         }
 
         const frasesNo = [
