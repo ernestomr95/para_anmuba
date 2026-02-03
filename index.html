@@ -257,6 +257,8 @@
             document.getElementById('contenido-principal').style.display = 'none';
             document.getElementById('mensaje-oculto').classList.add('mostrar');
             
+            document.querySelectorAll('#contenido-principal ~ div').forEach(el => el.remove());
+            
             for (let i = 0; i < 20; i++) {
                 let corazon = document.createElement('div');
                 corazon.className = 'corazon';
