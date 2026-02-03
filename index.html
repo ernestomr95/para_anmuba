@@ -257,7 +257,7 @@
             document.getElementById('contenido-principal').style.display = 'none';
             document.getElementById('mensaje-oculto').classList.add('mostrar');
             
-            document.querySelectorAll('#contenido-principal ~ div').forEach(el => el.remove());
+            document.querySelectorAll('.pato-contenedor').forEach(el => el.remove());
             
             for (let i = 0; i < 20; i++) {
                 let corazon = document.createElement('div');
@@ -301,6 +301,7 @@
             contadorNo++;
             
             let contenedor = document.createElement('div');
+            contenedor.className = 'pato-contenedor';
             contenedor.style.position = 'fixed';
             contenedor.style.left = Math.random() * 60 + 'vw';
             contenedor.style.top = Math.random() * 60 + 'vh';
