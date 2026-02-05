@@ -40,6 +40,18 @@
             animation: fadeIn 1s ease;
         }
         
+        .contenido-si {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .contenido-si .slide {
+            animation: fadeIn 0.8s ease;
+        }
+        
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.8); }
             to { opacity: 1; transform: scale(1); }
@@ -229,32 +241,87 @@
                 font-size: 2em !important;
             }
             
-            .galeria {
-                gap: 20px;
-                flex-direction: column !important;
-                align-items: center !important;
+            .contenido-si {
+                gap: 30px;
+            }
+            
+            .boton-vale {
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #contenido-principal h1 {
+                font-size: 1.8em !important;
+                padding: 0 10px;
+            }
+            
+            button {
+                padding: 15px 30px !important;
+                font-size: 1.2em !important;
+            }
+            
+            #mensaje-oculto h1 {
+                font-size: 2em !important;
+            }
+            
+            #mensaje-oculto {
+                padding: 15px;
+            }
+            
+            .contenido-si {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto auto;
+                gap: 15px;
+                justify-items: center;
+            }
+            
+            .contenido-si .slide:nth-child(1) {
+                grid-column: 1;
+                grid-row: 1;
+            }
+            
+            .contenido-si .slide:nth-child(2) {
+                grid-column: 2;
+                grid-row: 1;
+            }
+            
+            .contenido-si .slide:nth-child(3) {
+                grid-column: 1;
+                grid-row: 3;
+            }
+            
+            .contenido-si .slide:nth-child(4) {
+                grid-column: 2;
+                grid-row: 3;
+            }
+            
+            .boton-vale {
+                grid-column: 1 / -1;
+                grid-row: 2;
+                margin: 10px auto !important;
             }
             
             .slide {
                 width: 100%;
-                max-width: 300px;
+                max-width: 160px;
             }
             
             .slide img {
                 width: 100%;
                 height: auto;
-                max-width: 300px;
-            }
-            
-            .boton-vale {
-                padding: 20px 30px !important;
-                font-size: 1.2em !important;
-                width: 90%;
-                max-width: 320px;
             }
             
             .slide p {
-                font-size: 1.3em !important;
+                font-size: 1.1em !important;
+            }
+            
+            .boton-vale {
+                padding: 15px 20px !important;
+                font-size: 1em !important;
+                width: 90%;
+                max-width: 300px;
             }
             
             .corazon {
@@ -285,33 +352,24 @@
                 font-size: 1.5em !important;
             }
             
-            .galeria {
-                gap: 12px;
+            .contenido-si {
+                gap: 10px;
             }
             
             .slide {
-                width: 100%;
-                max-width: 260px;
-            }
-            
-            .slide img {
-                width: 100%;
-                height: auto;
-                max-width: 260px;
+                max-width: 140px;
             }
             
             .slide p {
-                font-size: 1.1em !important;
-                margin-top: 8px !important;
+                font-size: 0.9em !important;
+                margin-top: 5px !important;
             }
             
             .boton-vale {
-                padding: 15px 20px !important;
-                font-size: 1em !important;
+                padding: 12px 15px !important;
+                font-size: 0.9em !important;
                 width: 90%;
                 max-width: 260px;
-                margin: 12px auto !important;
-                border-radius: 15px !important;
             }
             
             #contrato {
@@ -319,11 +377,11 @@
             }
             
             #contrato h1 {
-                font-size: 1.4em !important;
+                font-size: 1.3em !important;
             }
             
             #contrato p, #contrato li {
-                font-size: 0.9em !important;
+                font-size: 0.85em !important;
             }
             
             #contrato button {
@@ -369,7 +427,7 @@
     </div>
     
         <div id="mensaje-oculto">
-            <div class="galeria">
+            <div class="contenido-si">
                 <div class="slide">
                     <img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=500" alt="Jardín de girasoles">
                     <p>Nuestro jardín 🌻</p>
@@ -378,13 +436,6 @@
                     <img src="https://images-porsche.imgix.net/-/media/5CCEFD7BFDEC44B0BFEDD8FC51856632_A716CD4802D241E3BE787EF14B813101_911-gt3-rs-side?w=800&q=80" alt="GT3 RS">
                     <p>Nuestro coche 🚗💨</p>
                 </div>
-            </div>
-            
-            <button onclick="mostrarContrato()" class="boton-vale">
-                Click aquí para obtener el vale por 1 besote 💋
-            </button>
-            
-            <div class="galeria">
                 <div class="slide">
                     <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500" alt="Casa bonita">
                     <p>Nuestra vida juntos 🏡</p>
@@ -393,6 +444,9 @@
                     <img src="https://images.unsplash.com/photo-1535139262971-c51845709a48?w=500" alt="Templo asiático">
                     <p>Nuestras vacaciones 🏯</p>
                 </div>
+                <button onclick="mostrarContrato()" class="boton-vale">
+                    Click aquí para obtener el vale por 1 besote 💋
+                </button>
             </div>
         </div>
 
