@@ -139,7 +139,72 @@
         }
 
         #contrato {
-            z-index: 50;
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            z-index: 100;
+            overflow-y: auto;
+        }
+        
+        .contrato-interno {
+            background: rgba(255,255,255,0.98);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contrato-interno h1 {
+            color: #ff6b6b;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        
+        .contrato-texto {
+            color: #333;
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .contrato-lista {
+            color: #555;
+            font-size: 1.1em;
+            text-align: left;
+            max-width: 600px;
+            margin: 30px auto;
+            line-height: 2;
+            list-style-position: inside;
+        }
+        
+        .contrato-promesa {
+            background: #fff0f0;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+        
+        .contrato-promesa p {
+            color: #d63384;
+            font-size: 1.2em;
+            font-style: italic;
+        }
+        
+        .contrato-final {
+            color: #ff6b6b;
+            font-size: 2em;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        
+        .contrato-besos {
+            margin-top: 30px;
+            font-size: 4em;
         }
         
         .corazon {
@@ -163,19 +228,6 @@
             25% { transform: translateY(-40px) rotate(10deg) scale(1.2); }
             50% { transform: translateY(-20px) rotate(-5deg) scale(1); }
             75% { transform: translateY(-50px) rotate(15deg) scale(1.1); }
-        }
-        
-        @keyframes flotar {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
-        }
-        
-        .girasol {
-            position: fixed;
-            font-size: 3.5em;
-            animation: flotarGirasol 4s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 0;
         }
         
         @keyframes flotarGirasol {
@@ -396,6 +448,40 @@
                 padding: 15px 25px !important;
                 font-size: 1em !important;
             }
+            
+            .contrato-interno {
+                padding: 25px;
+            }
+            
+            .contrato-interno h1 {
+                font-size: 1.5em !important;
+            }
+            
+            .contrato-texto {
+                font-size: 1em !important;
+            }
+            
+            .contrato-lista {
+                font-size: 0.9em !important;
+                margin: 20px auto !important;
+                padding-left: 10px;
+            }
+            
+            .contrato-promesa {
+                padding: 15px;
+            }
+            
+            .contrato-promesa p {
+                font-size: 1em !important;
+            }
+            
+            .contrato-final {
+                font-size: 1.5em !important;
+            }
+            
+            .contrato-besos {
+                font-size: 3em !important;
+            }
         }
     </style>
 </head>
@@ -458,34 +544,30 @@
             </div>
         </div>
 
-    <div id="contrato" style="display: none; text-align: center; padding: 30px; max-width: 800px; margin: 0 auto;">
-        <div style="background: rgba(255,255,255,0.95); padding: 40px; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
-            <h1 style="color: #ff6b6b; font-size: 2em; margin-bottom: 30px;">📜 CONTRATO OFICIAL 📜</h1>
+    <div id="contrato" class="contrato">
+        <div class="contrato-interno">
+            <h1>📜 CONTRATO OFICIAL 📜</h1>
             
-            <p style="color: #333; font-size: 1.2em; line-height: 1.8; margin-bottom: 20px;">
+            <p class="contrato-texto">
                 Al haber clicado aquí, has aceptado las siguientes condiciones:
             </p>
             
-            <ul style="color: #555; font-size: 1.1em; text-align: left; max-width: 600px; margin: 30px auto; line-height: 2;">
+            <ul class="contrato-lista">
                 <li>✅ Se te concederán <strong>1000 besotes diarios</strong></li>
                 <li>✅ <strong>NO se aceptan devoluciones</strong></li>
                 <li>✅ Debes aguantar a tu Ernesto por el <strong>resto de tu vida</strong></li>
                 <li>✅ Ernesto promete:</li>
             </ul>
             
-            <div style="background: #fff0f0; padding: 25px; border-radius: 20px; margin: 30px 0;">
-                <p style="color: #d63384; font-size: 1.2em; font-style: italic;">
+            <div class="contrato-promesa">
+                <p>
                     "Cuidarte y hacerte feliz, ser tu apoyo en los malos momentos<br>y <strong>disfrutar contigo</strong> de los buenos."
                 </p>
             </div>
             
-            <p style="color: #ff6b6b; font-size: 2em; font-weight: bold; margin-top: 30px;">
-                Te quiero, boba ❤️
-            </p>
+            <p class="contrato-final">Te quiero, boba ❤️</p>
             
-            <div style="margin-top: 30px;">
-                <span style="font-size: 4em;">💋💋💋</span>
-            </div>
+            <div class="contrato-besos">💋💋💋</div>
         </div>
     </div>
 
@@ -527,7 +609,7 @@
         }
 
         function mostrarContrato() {
-            document.querySelector('#mensaje-oculto button').style.display = 'none';
+            document.querySelector('.contenido-si').style.display = 'none';
             document.getElementById('contrato').style.display = 'block';
             document.getElementById('contrato').style.animation = 'fadeIn 1s ease';
         }
