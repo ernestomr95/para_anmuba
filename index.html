@@ -131,32 +131,90 @@
             75% { transform: translateY(-60px) rotate(20deg) scale(1.15); }
         }
 
-        @media (max-width: 768px) {
-            #contenido-principal h1 {
-                font-size: 1.8em !important;
-                padding: 0 10px;
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
             }
             
-            button {
-                padding: 15px 30px !important;
+            #contenido-principal {
+                padding: 20px;
+            }
+            
+            #contenido-principal h1 {
+                font-size: 1.6em !important;
+                margin-bottom: 30px !important;
+            }
+            
+            #contenido-principal button {
+                padding: 15px 35px !important;
                 font-size: 1.2em !important;
             }
             
+            #contenido-principal div {
+                flex-direction: column !important;
+                align-items: center;
+                gap: 15px !important;
+            }
+            
+            #mensaje-oculto {
+                padding: 15px;
+            }
+            
             #mensaje-oculto h1 {
-                font-size: 2em !important;
+                font-size: 1.5em !important;
+                word-wrap: break-word;
+            }
+            
+            #mensaje-oculto button {
+                padding: 20px 30px !important;
+                font-size: 1.2em !important;
+                width: 100%;
+                max-width: 320px;
             }
             
             .galeria {
-                gap: 20px;
+                gap: 25px;
+                padding: 15px;
+            }
+            
+            .slide {
+                width: 100%;
+                max-width: 350px;
+                margin: 0 auto;
             }
             
             .slide img {
-                width: 280px;
-                height: 180px;
+                width: 100%;
+                height: auto;
+                aspect-ratio: 3/2;
             }
             
             .slide p {
                 font-size: 1.3em !important;
+            }
+            
+            #contrato {
+                padding: 15px;
+            }
+            
+            #contrato > div {
+                padding: 25px !important;
+            }
+            
+            #contrato h1 {
+                font-size: 1.4em !important;
+            }
+            
+            #contrato p {
+                font-size: 1em !important;
+            }
+            
+            #contrato ul {
+                padding-left: 20px !important;
+            }
+            
+            #contrato li {
+                font-size: 0.95em !important;
             }
             
             .corazon {
@@ -165,52 +223,6 @@
             
             .girasol {
                 font-size: 2.5em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            #contenido-principal h1 {
-                font-size: 1.5em !important;
-            }
-            
-            button {
-                padding: 12px 25px !important;
-                font-size: 1em !important;
-                border-radius: 40px !important;
-            }
-            
-            #mensaje-oculto h1 {
-                font-size: 1.6em !important;
-            }
-            
-            .galeria {
-                gap: 15px;
-            }
-            
-            .slide img {
-                width: 90vw;
-                height: 150px;
-            }
-            
-            .slide p {
-                font-size: 1.1em !important;
-            }
-            
-            #contrato {
-                padding: 15px;
-            }
-            
-            #contrato h1 {
-                font-size: 1.5em !important;
-            }
-            
-            #contrato p, #contrato li {
-                font-size: 1em !important;
-            }
-            
-            #contrato button {
-                padding: 20px 30px !important;
-                font-size: 1.2em !important;
             }
         }
     </style>
