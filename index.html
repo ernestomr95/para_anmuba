@@ -90,14 +90,36 @@
             transform: scale(1.1) rotate(2deg);
         }
         
-        .slide p {
-            color: #fff;
-            font-size: 1.8em;
-            font-weight: bold;
-            margin-top: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            animation: bounce 2s infinite;
+            .slide p {
+                font-size: 1.8em;
+                font-weight: bold;
+                margin-top: 15px;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+                animation: bounce 2s infinite;
+            }
+            
+            .boton-vale {
+                padding: 25px 45px;
+                font-size: 1.5em;
+                background: linear-gradient(45deg, #ff6b6b, #ee5a5a);
+                color: white;
+                border: none;
+                border-radius: 20px;
+                cursor: pointer;
+                box-shadow: 0 10px 30px rgba(238, 90, 90, 0.4);
+                transition: all 0.3s ease;
+                margin: 30px auto;
+                display: block;
+            }
+            
+            .boton-vale:hover {
+                transform: scale(1.05);
+            }
         }
+            
+            .boton-vale:hover {
+                transform: scale(1.05);
+            }
         
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
@@ -158,6 +180,55 @@
                 font-size: 2em !important;
             }
             
+            #mensaje-oculto {
+                padding: 15px;
+            }
+            
+            .galeria {
+                gap: 15px;
+            }
+            
+            .slide {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .slide img {
+                width: 100%;
+                height: auto;
+                max-width: 280px;
+            }
+            
+            .slide p {
+                font-size: 1.3em !important;
+            }
+            
+            .boton-vale {
+                padding: 18px 25px !important;
+                font-size: 1.1em !important;
+                width: 90%;
+                max-width: 280px;
+                margin: 15px auto !important;
+            }
+            
+            .corazon {
+                font-size: 2em;
+            }
+            
+            .girasol {
+                font-size: 2.5em;
+            }
+        }
+            
+            button {
+                padding: 15px 30px !important;
+                font-size: 1.2em !important;
+            }
+            
+            #mensaje-oculto h1 {
+                font-size: 2em !important;
+            }
+            
             .galeria {
                 gap: 20px;
                 flex-direction: column !important;
@@ -166,12 +237,19 @@
             
             .slide {
                 width: 100%;
-                max-width: 320px;
+                max-width: 300px;
             }
             
             .slide img {
                 width: 100%;
                 height: auto;
+                max-width: 300px;
+            }
+            
+            .boton-vale {
+                padding: 20px 30px !important;
+                font-size: 1.2em !important;
+                width: 90%;
                 max-width: 320px;
             }
             
@@ -199,38 +277,58 @@
                 border-radius: 40px !important;
             }
             
+            #mensaje-oculto {
+                padding: 10px;
+            }
+            
             #mensaje-oculto h1 {
-                font-size: 1.6em !important;
+                font-size: 1.5em !important;
             }
             
             .galeria {
-                gap: 15px;
+                gap: 12px;
+            }
+            
+            .slide {
+                width: 100%;
+                max-width: 260px;
             }
             
             .slide img {
-                width: 90vw;
-                height: 150px;
+                width: 100%;
+                height: auto;
+                max-width: 260px;
             }
             
             .slide p {
                 font-size: 1.1em !important;
+                margin-top: 8px !important;
+            }
+            
+            .boton-vale {
+                padding: 15px 20px !important;
+                font-size: 1em !important;
+                width: 90%;
+                max-width: 260px;
+                margin: 12px auto !important;
+                border-radius: 15px !important;
             }
             
             #contrato {
-                padding: 15px;
+                padding: 10px;
             }
             
             #contrato h1 {
-                font-size: 1.5em !important;
+                font-size: 1.4em !important;
             }
             
             #contrato p, #contrato li {
-                font-size: 1em !important;
+                font-size: 0.9em !important;
             }
             
             #contrato button {
-                padding: 20px 30px !important;
-                font-size: 1.2em !important;
+                padding: 15px 25px !important;
+                font-size: 1em !important;
             }
         }
     </style>
@@ -270,40 +368,33 @@
         </div>
     </div>
     
-    <div id="mensaje-oculto">
-        <button onclick="mostrarContrato()" style="
-            padding: 30px 50px;
-            font-size: 1.8em;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a5a);
-            color: white;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(238, 90, 90, 0.4);
-            transition: all 0.3s ease;
-        " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-            Click aquí para obtener el vale por 1 besote 💋
-        </button>
-        
-        <div class="galeria">
-            <div class="slide">
-                <img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=500" alt="Jardín de girasoles">
-                <p>Nuestro jardín 🌻</p>
+        <div id="mensaje-oculto">
+            <div class="galeria">
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=500" alt="Jardín de girasoles">
+                    <p>Nuestro jardín 🌻</p>
+                </div>
+                <div class="slide">
+                    <img src="https://images-porsche.imgix.net/-/media/5CCEFD7BFDEC44B0BFEDD8FC51856632_A716CD4802D241E3BE787EF14B813101_911-gt3-rs-side?w=800&q=80" alt="GT3 RS">
+                    <p>Nuestro coche 🚗💨</p>
+                </div>
             </div>
-            <div class="slide">
-                <img src="https://images-porsche.imgix.net/-/media/5CCEFD7BFDEC44B0BFEDD8FC51856632_A716CD4802D241E3BE787EF14B813101_911-gt3-rs-side?w=800&q=80" alt="GT3 RS">
-                <p>Nuestro coche 🚗💨</p>
-            </div>
-            <div class="slide">
-                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500" alt="Casa bonita">
-                <p>Nuestra vida juntos 🏡</p>
-            </div>
-            <div class="slide">
-                <img src="https://images.unsplash.com/photo-1535139262971-c51845709a48?w=500" alt="Templo asiático">
-                <p>Nuestras vacaciones 🏯</p>
+            
+            <button onclick="mostrarContrato()" class="boton-vale">
+                Click aquí para obtener el vale por 1 besote 💋
+            </button>
+            
+            <div class="galeria">
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500" alt="Casa bonita">
+                    <p>Nuestra vida juntos 🏡</p>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1535139262971-c51845709a48?w=500" alt="Templo asiático">
+                    <p>Nuestras vacaciones 🏯</p>
+                </div>
             </div>
         </div>
-    </div>
 
     <div id="contrato" style="display: none; text-align: center; padding: 30px; max-width: 800px; margin: 0 auto;">
         <div style="background: rgba(255,255,255,0.95); padding: 40px; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
