@@ -207,6 +207,67 @@
             font-size: 4em;
         }
         
+        .contrato-cita {
+            color: #333;
+            font-size: 1.1em;
+            font-style: italic;
+            margin: 30px 0;
+            line-height: 1.8;
+        }
+        
+        .boton-homer {
+            padding: 15px 35px;
+            font-size: 1.3em;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            color: #ff6b6b;
+            border: 3px solid #ff6b6b;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .boton-homer:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+        }
+        
+        #homer-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        #homer-overlay img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        #homer-overlay p {
+            color: #fff;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        
+        #homer-overlay .cerrar {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 2em;
+            cursor: pointer;
+        }
+        
         .corazon {
             position: fixed;
             font-size: 3em;
@@ -482,6 +543,16 @@
             .contrato-besos {
                 font-size: 3em !important;
             }
+            
+            .contrato-cita {
+                font-size: 0.95em !important;
+                margin: 20px 0 !important;
+            }
+            
+            .boton-homer {
+                padding: 12px 25px !important;
+                font-size: 1.1em !important;
+            }
         }
     </style>
 </head>
@@ -567,8 +638,22 @@
             
             <p class="contrato-final">Te quiero, boba ❤️</p>
             
+            <p class="contrato-cita">
+                Como dijo Shakespeare:<br>
+                <em>"Duda que sean fuego las estrellas, duda que el sol se mueva,<br>
+                duda que la verdad sea mentira, pero no dudes jamás de que te amo."</em>
+            </p>
+            
+            <button id="boton-homer" class="boton-homer" onclick="mostrarHomer()">Clicame 💕</button>
+            
             <div class="contrato-besos">💋💋💋</div>
         </div>
+    </div>
+
+    <div id="homer-overlay" onclick="cerrarHomer()">
+        <span class="cerrar">&times;</span>
+        <img id="homer-img" src="" alt="Homer">
+        <p>¡Te amo mi amor! ❤️</p>
     </div>
 
     <script>
@@ -612,6 +697,18 @@
             document.querySelector('.contenido-si').style.display = 'none';
             document.getElementById('contrato').style.display = 'block';
             document.getElementById('contrato').style.animation = 'fadeIn 1s ease';
+        }
+
+        function mostrarHomer() {
+            const overlay = document.getElementById('homer-overlay');
+            const img = document.getElementById('homer-img');
+            img.src = 'homer.jpg';
+            overlay.style.display = 'flex';
+            overlay.style.animation = 'fadeIn 0.5s ease';
+        }
+        
+        function cerrarHomer() {
+            document.getElementById('homer-overlay').style.display = 'none';
         }
 
         const frasesNo = [
