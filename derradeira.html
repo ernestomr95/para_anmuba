@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Derradeira - Cervecería</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #d4a574 0%, #8b4513 50%, #3e2723 100%);
+            background-attachment: fixed;
+            color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 0;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 4em;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+        
+        .tagline {
+            font-size: 1.5em;
+            margin-top: 10px;
+            color: #ffd700;
+            font-style: italic;
+        }
+        
+        .hero {
+            background: rgba(0,0,0,0.3);
+            padding: 60px 20px;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 20px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+        
+        .hero p {
+            font-size: 1.3em;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 60px 0;
+        }
+        
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+        
+        .feature p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        
+        .menu-preview {
+            background: rgba(0,0,0,0.4);
+            padding: 60px 20px;
+            margin: 40px 0;
+            border-radius: 20px;
+        }
+        
+        .menu-preview h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #ffd700;
+        }
+        
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .menu-item {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .menu-item h4 {
+            font-size: 1.5em;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+        
+        .menu-item p {
+            font-size: 1em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .info-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .info-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        
+        .contact-item {
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .contact-item h3 {
+            font-size: 1.5em;
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        
+        footer {
+            background: rgba(0,0,0,0.5);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .footer-content h3 {
+            font-size: 1.8em;
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+        
+        .footer-content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .hours {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+        
+        .social {
+            margin-top: 20px;
+        }
+        
+        .social a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+        
+        .social a:hover {
+            color: #fff;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3em;
+            }
+            
+            .tagline {
+                font-size: 1.3em;
+            }
+            
+            .hero h2 {
+                font-size: 2em;
+            }
+            
+            .hero p {
+                font-size: 1.1em;
+            }
+            
+            .features {
+                padding: 40px 0;
+            }
+            
+            .feature {
+                padding: 30px 20px;
+            }
+            
+            .menu-preview h2 {
+                font-size: 2em;
+            }
+            
+            .info-section h2 {
+                font-size: 2em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2.5em;
+            }
+            
+            .tagline {
+                font-size: 1.2em;
+            }
+            
+            header {
+                padding: 40px 0;
+            }
+            
+            .hero {
+                padding: 40px 15px;
+                margin: 30px 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8em;
+            }
+            
+            .hero p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">A Derradeira</h1>
+            <p class="tagline">Cervezas Artesanas y Comida Casera</p>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h2>El Sabor de lo Auténtico</h2>
+            <p>Descubre el placer de nuestras cervezas artesanales elaboradas con pasión y los platos caseros que recuerdan a casa. Cada visita es una experiencia única donde la tradición se encuentra con la innovación.</p>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="container">
+            <div class="feature">
+                <div class="feature-icon">🍺</div>
+                <h3>Cervezas Artesanas</h3>
+                <p>Elaboradas in situ con ingredientes seleccionados y procesos tradicionales. IPA, Stout, Lager, Wheat... ¡variad para todos los gustos!</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🍽️</div>
+                <h3>Comida Casera</h3>
+                <p>Recetas tradicionales con el toque de siempre. Platos elaborados diariamente con productos frescos y locales.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🏡</div>
+                <h3>Ambiente Acogedor</h3>
+                <p>Un espacio donde sentirte como en casa, perfecto para compartir momentos con amigos o disfrutar en paz.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="menu-preview">
+        <div class="container">
+            <h2>Nuestras Especialidades</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <h4>Raciones Caseras</h4>
+                    <p>Pimientos de Padrón, chipirones a la plancha, lacón con grelos y todas nuestras especialidades gallegas.</p>
+                    <div class="price">Desde 6€</div>
+                </div>
+                
+                <div class="menu-item">
+                    <h4>Tapas Innovadoras</h4>
+                    <p>Fusión de la cocina tradicional con toques modernos. Croquetas de cerveza, hamburguesas gourmet, y mucho más.</p>
+                    <div class="price">Desde 8€</div>
+                </div>
+                
+                <div class="menu-item">
+                    <h4>Cerveza del Día</h4>
+                    <p>Elaboración especial cada jornada. Consulta nuestro tap de barril exclusivo del día.</p>
+                    <div class="price">4€/caña</div>
+                </div>
+                
+                <div class="menu-item">
+                    <h4>Postres Caseros</h4>
+                    <p>Tarta de queso, filloas, arroz con leche. Todo como lo hacía la abuela.</p>
+                    <div class="price">Desde 4€</div>
+                </div>
+                
+                <div class="menu-item">
+                    <h4>Mariscos Frescos</h4>
+                    <p>Mejillones al vapor, zamburiñas, percebes... Directos de lonja a tu mesa.</p>
+                    <div class="price">Según mercado</div>
+                </div>
+                
+                <div class="menu-item">
+                    <h4>Catas Degustación</h4>
+                    <p>Disfruta de nuestras 6 cervezas artesanales con maridaje perfecto para cada una.</p>
+                    <div class="price">18€</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="info-section">
+        <div class="container">
+            <h2>Encuéntranos</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📍 Dirección</h3>
+                    <p>Rúa da Esperanza, 27<br>36203 Vigo, Pontevedra</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>📞 Teléfono</h3>
+                    <p>986 123 456<br>WhatsApp: 666 888 999</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>📧 Contacto</h3>
+                    <p>info@aderradeira.com<br>Reservas: reservas@aderradeira.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <h3>A Derradeira</h3>
+            <p>Donde cada cerveza cuenta una historia y cada plato es un abrazo del hogar.</p>
+            
+            <div class="hours">
+                <p><strong>Horario:</strong></p>
+                <p>Martes a Jueves: 12:00 - 23:00</p>
+                <p>Viernes y Sábado: 12:00 - 01:00</p>
+                <p>Domingo: 12:00 - 23:00</p>
+                <p>Lunes: Cerrado</p>
+            </div>
+            
+            <div class="social">
+                <a href="#">📷</a>
+                <a href="#">📘</a>
+                <a href="#">🐦</a>
+                <a href="#">📍</a>
+            </div>
+            
+            <p style="margin-top: 30px; font-size: 0.9em; opacity: 0.8;">
+                © 2024 A Derradeira. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
